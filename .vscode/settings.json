@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/anaconda3/bin/python",
+    "git.path": "/usr/local/bin/git",
+    "git.autofetch": true
+}
