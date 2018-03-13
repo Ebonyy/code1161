@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/anaconda3/bin/python",
+    "python.pythonPath": "C:\\Users\\ebony\\.anaconda\\python.exe",
     "git.path": "/usr/local/bin/git",
     "git.autofetch": true
 }

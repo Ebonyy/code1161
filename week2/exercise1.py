@@ -11,18 +11,26 @@ import platform
 # I think this will print "hello! Let's get started" by calling the print function.
 print("hello! Let's get started")  # it printed "hello! Let's get started"
 
-some_words = ['what', 'does', 'this', 'line', 'do', '?']
+some_words = ['what', 'does', 'this', 'line', 'do', '?'] 
 
+# I think this line will print "what does this line do?" each word indiviually
 for word in some_words:
     print(word)
+    # each time the string was stepped over, it printed a word within quotation
 
+# I think this line will only print the first word
 for x in some_words:
     print(x)
+    # same as previous string
 
-print(some_words)
+# will print ['what' 'does' 'this' 'line' 'do' '?'] 
+print(some_words) # printed ['what', 'does', 'this', 'line', 'do', '?'] (lol forgot about commas)
 
+#if "some_words" is bigger than 3, it will print ('some_words contains more than 3 words')
 if len(some_words) > 3:
-    print('some_words contains more than 3 words')
+    print('some_words contains more than 3 words') #it printed ('some_words contains more than 3 words'),
+    #as it contains more than three words
+
 
 def usefulFunction():
     """
@@ -30,6 +38,9 @@ def usefulFunction():
     what the line below does:
     https://docs.python.org/3/library/platform.html#platform.uname
     """
+    # It will Returns a namedtuple() containing six attributes: 
+    # system, node, release, version, machine, and processor.
     print(platform.uname())
+    #yup, it did it 
 
 usefulFunction()
