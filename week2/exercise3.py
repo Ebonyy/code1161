@@ -3,6 +3,11 @@
 
 
 def is_odd(a_number):
+    if a_number %(2):
+        return a_number
+    else: 
+        return a_number == False 
+   
     """Return True if a_number is odd, and False if a_number is even.
 
     Look into modulo division using the '%' operator as one way of doing this.
@@ -11,6 +16,18 @@ def is_odd(a_number):
 
 
 def fix_it(moves=True, should_move=True):
+    if moves:
+        if should_move:
+            return "No Problem"
+        else:
+            return "Duct Tape"
+    else:
+        if should_move:
+            return "WD-40"
+        else:
+            return "No Problem"
+      
+
     """Decide what to do.
 
     Using the engineering flowchart (in week2 folder engineeringFlowchart.png)
@@ -31,11 +48,16 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    pass
+    star_list = []
+    for x in range(10):
+        star_list.append('*')
+    return star_list
 
 
 
 def loops_1c(number_of_items=5, symbol="#"):
+    
+        
     """Respond to variables.
 
     using any method
@@ -43,8 +65,10 @@ def loops_1c(number_of_items=5, symbol="#"):
     a string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    pass
-
+    symbol_list = []
+    for i in range(number_of_items):
+        symbol_list.append(str(symbol))
+    return symbol_list
 
 def loops_2():
     """Make a big square starfield.
@@ -64,7 +88,13 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    pass
+    star_list = []
+    for x in range(10):
+            row = []
+            for x in range (10):
+                row.append ('*')
+            star_list.append(row)
+    return star_list
 
 
 def loops_3():
@@ -88,7 +118,13 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    pass
+    number_list = []
+    for x in range(10):
+        temp_list = ([])
+        for n in range(10):
+            temp_list.append(str(x))
+        number_list.append(temp_list)
+    return number_list
 
 
 def loops_4():
@@ -108,7 +144,13 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    pass
+    number_list = []
+    for x in range(10):
+        temp_list = []
+        for n in range(10):
+            temp_list.append(str(n))
+        number_list.append(temp_list)
+    return number_list
 
 
 def loops_5():
@@ -133,7 +175,13 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    pass
+    column = []
+    for x in range(10):
+        row = []
+        for n in range(5):
+           row.append("(i" + str(x) + ", j" + str(n) + ")")
+        column.append(row)
+    return column
 
 
 def loops_6():
@@ -156,10 +204,22 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    pass
+    temp_list = []
+    for x in range(10):
+        temp_list.append([])
+        for n in range(x+1):
+            temp_list[x].append(str(n))
+    return temp_list
 
 
 def loops_7():
+
+    '''temp_list = []
+    for x in range(9):
+        temp_list.append([])
+        for n in range():
+            temp_list[x].append(str(n))
+    return temp_list'''
     """Make a pyramid.
 
     Return this:
@@ -180,7 +240,16 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    pass
+    column_1 = []
+    for x in range(5):
+        row_1 =[]
+        for n in range(9):
+            if abs(n-4) <=x:
+                row_1.append("*")
+            else:
+                row_1.append(" ")
+        column_1.append(row_1)
+    return column_1
 
 
 def lp(some_kind_of_list, exercise_name):
