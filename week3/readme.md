@@ -1,1 +1,1 @@
-TODO: Reflect on what you learned this week and what is still unclear.
+I spent so much time on thus coding yet i still dont understand. The only thing i undertsnad is that i have to use the while code. I struggled with this alot :(
