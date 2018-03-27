@@ -28,7 +28,17 @@ def binary_search(low, high, actual_number):
       tests aren't that smart yet.)
     """
 
-    return {"guess": guess, "tries": tries}
+    count = 1
+    What_Is_Sleep = int((low + high) / 2)
+    while actual_number != What_Is_Sleep:
+      if What_Is_Sleep < actual_number:
+        low = What_Is_Sleep
+      else:
+        high = What_Is_Sleep
+      What_Is_Sleep = int((low +high) / 2)
+      count = count
+
+    return {"guess": What_Is_Sleep, "tries": count}
 
 
 if __name__ == "__main__":
