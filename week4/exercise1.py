@@ -19,6 +19,7 @@ if LOCAL != CWD:
 
 
 def get_some_details():
+    
     """Parse some JSON.
 
     In lazyduck.json is a description of a person from https://randomuser.me/
@@ -36,10 +37,16 @@ def get_some_details():
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
 
+    '''theJSON = json.loads(data)
+    if "last" in theJSON ["name"]:
+        return (theJSON["name"]["last"])'''
+
+   
+
     data = json.loads(json_data)
-    return {"lastName":       None,
-            "password":       None,
-            "postcodePlusID": None
+    return {"lastName":       data["results"][0]["name"]["last"],
+            "password":       data["results"][0]["login"]["password"],
+            "postcodePlusID": int(data["results"][0]["location"]["postcode"]) + int(data["results"][0]["id"]["value"])
             }
 
 
@@ -79,8 +86,31 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    pass
+    url = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=10&maxLength=10&limit=1"
 
+    wpyramid = []
+    '''for x in range(20):
+        url1 = url + str(x) + "10&limit=1"
+        requests.get(url)
+        response = r.text
+        response_json = json.loads(response)
+        return response_json [0]['word']'''
+
+    for x in range(3,21,2):
+        r = requests.get(url)
+        url = url.format(x)
+        word = r.json()[0]['word']
+        wpyramid.append(word)
+        print(word)
+
+    for x in range(20,3,-2):
+        r = requests.get(url)
+        url = url.format(str(x))
+        word = r.json()[0]['word']
+        wpyramid.append(word)
+        print(word)
+
+    return wpyramid
 
 def wunderground():
     """Find the weather station for Sydney.
@@ -94,7 +124,7 @@ def wunderground():
          variable and then future access will be easier.
     """
     base = "http://api.wunderground.com/api/"
-    api_key = "YOUR KEY - REGISTER TO GET ONE"
+    api_key = "fa226912744b8e95"
     country = "AU"
     city = "Sydney"
     template = "{base}/{key}/conditions/q/{country}/{city}.json"
@@ -103,10 +133,10 @@ def wunderground():
     the_json = json.loads(r.text)
     obs = the_json['current_observation']
 
-    return {"state":           None,
-            "latitude":        None,
-            "longitude":       None,
-            "local_tz_offset": None}
+    return {"state":           obs['observation_location']['state'],
+            "latitude":        obs['observation_location']['latitude'],
+            "longitude":       obs['observation_location']['longitude'],
+            "local_tz_offset": obs['local_tz_offset']}
 
 
 def diarist():
@@ -122,7 +152,9 @@ def diarist():
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
     """
-    pass
+    laser_file = open("laser.pew","w+")
+    laser_file.write('4')
+    laser_file.close()
 
 
 if __name__ == "__main__":

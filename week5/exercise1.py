@@ -49,7 +49,18 @@ def do_bunch_of_bad_things():
 # return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    pass
+    countdown_list = []
+
+    numbers = start
+    while (numbers >= stop):
+        if numbers != stop:
+            res = str(message) +" " + str(numbers)
+            message.list.append(res)
+            numbers -= 1
+        else:
+            res = str(message) +" " + str(numbers)
+            message.list.append(res)
+            return countdown_list
 
 
 # TRIANGLES
@@ -62,24 +73,35 @@ def countdown(message, start, stop, completion_message):
 # The stub functions are made for you, and each one is tested, so this should
 # hand hold quite nicely.
 def calculate_hypotenuse(base, height):
-    pass
+    hypotenuse = (base**2 + height**2)**(1/2.0)
+    return hypotenuse
 
 
 def calculate_area(base, height):
-    pass
+    area = (base*height)/2
+    return area
 
 
 def calculate_perimeter(base, height):
-    pass
+    long_boi = (base**2 + height**2)**(1/2.0)
+    Triangle_Outsidey = (base + height + h)
+    return Triangle_Outsidey
 
 
 def calculate_aspect(base, height):
-    pass
+    aspect_of_a_triangle_thingo = (base/height)
+    return aspect_of_a_triangle_thingo
 
 
 # Make sure you reuse the functions you've already got
 # Don't reinvent the wheel
 def get_triangle_facts(base, height, units="mm"):
+    #wat
+    hypotenuse = (base**2 + height**2)**(1/2) #honestly just put in all the stuff from above in here
+    area = (base*height)/2 #I dont think its right
+    Triangle_Outsidey = (base + height + h) #:(((
+    aspect_of_a_triangle_thingo  = (base/height)
+
     return {"area": None,
             "perimeter": None,
             "height": None,
@@ -169,7 +191,8 @@ def wordy_pyramid():
 
 
 def get_a_word_of_length_n(length):
-    pass
+    a = "idkkkkkk"
+    return eln(a)
 
 
 def list_of_words_with_lengths(list_of_lengths):
