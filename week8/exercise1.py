@@ -17,7 +17,7 @@ def greet(name="Towering Timmy"):
     return a string of "Hello" and the name argument.
     E.g. if given as "Towering Timmy" it should return "Hello Towering Timmy"
     """
-    pass
+    return ("Hello " + name)
 
 
 def three_counter(input_list=[1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]):
@@ -26,8 +26,8 @@ def three_counter(input_list=[1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]):
     Return an integer.
     TIP: the test will use a different input_list, so don't just return 5
     """
-    pass
-
+    for n in (0, len(input_list)):
+        return (input_list[n])
 
 def fizz_buzz():
     """Do the fizzBuzz.
@@ -44,8 +44,18 @@ def fizz_buzz():
     if it is. E.g. [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, ...]
     """
     fizzBuzzList = []
-    # your code here
+    for n in range (1, 101):
+        if n%3 == 0 and n%5 == 0:
+            fizzBuzzList.append("FizzBuzz")
+        elif n%3==0:
+            fizzBuzzList.append("Fizz")
+        elif n%5 == 0:
+            fizzBuzzList.append("Buzz")
+        else:
+            fizzBuzzList.append(n)
     return fizzBuzzList
+        
+    
 
 
 def put_behind_bars(input_string="very naughty boy"):
@@ -57,7 +67,8 @@ def put_behind_bars(input_string="very naughty boy"):
     TIP: conside using the 'join' method in Python.
     TIP: make sure that you have a pipe on both ends of the string.
     """
-    pass
+    pipe = "|"
+    return ("|" + pipe.join(input_string) + "|")
 
 
 def pet_filter(letter="a"):
@@ -70,7 +81,8 @@ def pet_filter(letter="a"):
             "bali cattle", "gayal", "turkey", "goldfish", "rabbit", "koi",
             "canary", "society finch", "fancy mouse", "siamese fighting fish",
             "fancy rat and lab rat", "mink", "red fox", "hedgehog", "guppy"]
-    pass
+    PlsWork = [x for x in pets if letter in x ]
+    return PlsWork
 
 
 def best_letter_for_pets():
@@ -79,9 +91,13 @@ def best_letter_for_pets():
     Reusing the pet_filter, find the letter that gives the longest list of pets
     TIP: return just a letter, not the list of animals.
     """
-    import string
+    import string(pet_filter)
     the_alphabet = string.ascii_lowercase
+    
+    Find_Letter = [x for x in pets if the_alphabet in x ]
+    return Find_Letter
     pass
+    
 
 
 def make_filler_text_dictionary():
@@ -115,6 +131,13 @@ def make_filler_text_dictionary():
     import requests
     return
 
+    url = '"http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=3&maxLength=7&limit=3"'
+    
+    r = requests.get(url)
+    Response_json = json.loads(r.text)
+    return Response_json[0]['word']
+    #gotta find number of for each word and categorise into each list 
+    #bruh idk  
 
 def random_filler_text(number_of_words=200):
     """Make a paragraph of random filler text.
@@ -127,8 +150,8 @@ def random_filler_text(number_of_words=200):
     TIP: you'll need the random library, 
         see line 77 of week4/hangman_leadboard.py for an example.
     """
-    import random
-    pass
+    wordIndex = random.randint(0, len(number_of_words) - 1)
+    return number_of_words[wordIndex]
 
 
 def fast_filler(number_of_words=200):
