@@ -1,1 +1,5 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+
+Righto, so today, well it is now yesterday, as I am writing this at 12.03am on th 2nd of March 2018, was introduced to the OpenData project. Im actually keen, as im probably going to learn alot from this project, both python and topic wise. Tbh, im probably going to focus on bees, cause bruh, they dyin. And idk, I reckon its important. Or maybe something to do with space, but I reckon thatll be really hard cause there is so much info. Maybe if i focus on something specific, e.g. the liviblilty of planets within a certain distance from earth?? Idk, have to research more. 
+
+The intro into pandas and other libaries was much easier for me to underwtand than compared to previous weeks, so thats cool. Also side note: I hate presentations, like im so bad at them , yet I know "pratice makes it easier" but nooooooooooo, im still gonna be sad :(( 
